@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  mock-server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: stream-chat-mock-server
+    ports:
+      - "8080:8080"
+    environment:
+      - TZ=Asia/Seoul
+    restart: unless-stopped
